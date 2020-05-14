@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="parentAnchorPane" prefHeight="346.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="daveson217.main.LightEyeController">
+   <children>
+      <MenuBar layoutX="1.0" layoutY="-2.0" prefHeight="32.0" prefWidth="635.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#aboutApp" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Separator layoutX="1.0" layoutY="99.0" prefHeight="14.0" prefWidth="635.0" />
+      <Button layoutX="109.0" layoutY="55.0" mnemonicParsing="false" onAction="#startCounting" text="Start Counting" />
+      <Button layoutX="264.0" layoutY="55.0" mnemonicParsing="false" onAction="#pauseCounting" text="Pause Counting" />
+      <Button layoutX="422.0" layoutY="55.0" mnemonicParsing="false" onAction="#stopCounting" text="Stop Counting" />
+      <Label fx:id="timeRemainingLabel" layoutX="180.0" layoutY="173.0" prefHeight="50.0" prefWidth="276.0" text="00 min: 00 secs" textFill="#3220f8">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="409.0" layoutY="303.0" text="www.github.com/Daveson217" />
+   </children>
+</AnchorPane>
