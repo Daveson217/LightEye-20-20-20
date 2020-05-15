@@ -31,7 +31,7 @@ public class LightEyeController implements Initializable {
     @FXML
     private AnchorPane parentAnchorPane;        
     @FXML
-    private Label timeRemainingLabel;
+    private Label timeElapsedLabel;
     
     private Timeline countdownTimeline;
     private int elapsedTimeInSeconds = 0;
@@ -48,7 +48,7 @@ public class LightEyeController implements Initializable {
             Stage stage = (Stage) parentAnchorPane.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.initOwner(stage);
-            alert.setTitle("LightEye v1.0beta");            
+            alert.setTitle("LightEye v1.0 beta");            
             alert.setHeaderText("LightEye 20-20-20");
             alert.setContentText("The 20-20-20 rule states that for every 20 minutes spent looking at a screen, a person should look at something 20 feet away for 20 seconds.\n "
                     + "Protect your eyes.\nThis application reminds you to do this every 20 minutes.\n www.github.com/Daveson217");
@@ -62,13 +62,13 @@ public class LightEyeController implements Initializable {
             @Override
             public void handle(ActionEvent event) {               
                 elapsedTimeInSeconds += 1;
-                timeRemainingLabel.setText(formatTime(elapsedTimeInSeconds * 1000)); 
+                timeElapsedLabel.setText(formatTime(elapsedTimeInSeconds * 1000)); 
                                 
                 if (elapsedTimeInSeconds >= 1200) {
                     countdownTimeline.stop();
                     elapsedTimeInSeconds = 0;                    
-                    timeRemainingLabel.setText("00 min: 00 secs");
-                    Notifications.create().title("LightEye 20-20-20").text("Its time to look at something 20 feet away for 20 seconds!").hideAfter(new Duration(10000)).position(Pos.TOP_CENTER).showWarning();
+                    timeElapsedLabel.setText("00 min: 00 secs");
+                    Notifications.create().title("LightEye 20-20-20").text("Its time to look at something 20 feet away for 20 seconds!").hideAfter(new Duration(10000)).position(Pos.TOP_CENTER).showWarning();                    
                     startCounting(event); // Restart countdown
                 }
             }
@@ -89,7 +89,7 @@ public class LightEyeController implements Initializable {
     private void stopCounting(ActionEvent event) {
         countdownTimeline.stop();
         elapsedTimeInSeconds = 0;    
-        timeRemainingLabel.setText("00 min: 00 secs");
+        timeElapsedLabel.setText("00 min: 00 secs");
     }
 
     @FXML

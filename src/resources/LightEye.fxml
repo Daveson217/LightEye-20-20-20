@@ -30,7 +30,7 @@
       <Button layoutX="109.0" layoutY="55.0" mnemonicParsing="false" onAction="#startCounting" text="Start Counting" />
       <Button layoutX="264.0" layoutY="55.0" mnemonicParsing="false" onAction="#pauseCounting" text="Pause Counting" />
       <Button layoutX="422.0" layoutY="55.0" mnemonicParsing="false" onAction="#stopCounting" text="Stop Counting" />
-      <Label fx:id="timeRemainingLabel" layoutX="180.0" layoutY="173.0" prefHeight="50.0" prefWidth="276.0" text="00 min: 00 secs" textFill="#3220f8">
+      <Label fx:id="timeElapsedLabel" layoutX="180.0" layoutY="173.0" prefHeight="50.0" prefWidth="276.0" text="00 min: 00 secs" textFill="#3220f8">
          <font>
             <Font name="System Bold" size="34.0" />
          </font>

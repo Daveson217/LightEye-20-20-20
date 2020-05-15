@@ -35,6 +35,7 @@ public class LightEyeLauncher extends Application {
         } );
        primaryStage.setResizable(false);
        primaryStage.setScene(scene);
+       primaryStage.setTitle("LightEye v1.0 beta");
        primaryStage.show();
     }
     /**
